@@ -28,13 +28,6 @@ class InstaBot:
         if hasattr(self, 'driver'):
             self.driver.quit()
 
-    def is_logged_in(self):
-        try:
-            self.driver.find_element_by_xpath(self.SEARCH_FIELD)
-        except NoSuchElementException:
-            return False
-        return True
-
     def login(self, username, password):
         self.driver.get('https://www.instagram.com/')
         find_element_by_xpath = self.driver.find_element_by_xpath
@@ -49,4 +42,13 @@ class InstaBot:
             sleep(1)
         except NoSuchElementException:
             pass
-        sleep(2)
+
+    def is_logged_in(self):
+        return self._have_element_by_xpath(self.SEARCH_FIELD)
+
+    def _have_element_by_xpath(self, xpath):
+        try:
+            self.driver.find_element_by_xpath(xpath)
+        except NoSuchElementException:
+            return False
+        return True
