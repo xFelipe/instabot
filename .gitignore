@@ -1,0 +1,7 @@
+.env
+.idea/
+Pipfile.lock
+__pycache__/
+.coverge
+.coverage
+geckodriver.log
