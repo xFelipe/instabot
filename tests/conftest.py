@@ -6,7 +6,7 @@ from decouple import config
 @pytest.fixture(scope="function")
 def bot():
     """Retorna um InstaBot com o mínimo de configurações"""
-    yield InstaBot(silent=config('silent', False, cast=bool))
+    yield InstaBot(silent=config('SILENT', False, cast=bool))
 
 @pytest.fixture(scope="function")
 def authenticated_bot(bot):
