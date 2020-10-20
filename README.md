@@ -3,7 +3,7 @@
 ___
 
 ### Configurar ambiente
- - Definir variáveis de ambiente `INSTA_LOGIN` e `INSTA_SENHA`.
+ - Definir variáveis de ambiente `INSTA_USERNAME` e `INSTA_PASSWORD`.
  - `pip install pipenv`.
 ---
 ### Rodar testes
